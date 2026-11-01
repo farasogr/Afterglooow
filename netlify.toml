@@ -6,7 +6,7 @@
   ]
 
 [build]
-publish = "public"
+publish = "Public"
 
 [[redirects]]
 from = "/creations"
