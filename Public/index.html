@@ -102,7 +102,7 @@ const distanceRatio = h.refSize
 
 h.measuredScale = Math.max(
   0.25,
-  Math.min(4.0, Math.pow(distanceRatio, 1.8))
+  Math.min(4.0, Math.pow(distanceRatio, 4))
 );
 updateGesture(h,pose,now);return true}
 function draw(l,id,w,height,tentative=false){const u=w/640,c=tentative?'#6f8580':color(id);lc.strokeStyle=c;lc.lineWidth=3*u;lc.globalAlpha=tentative?.55:1;for(const [a,b] of LINKS){lc.beginPath();lc.moveTo(l[a].x*w,l[a].y*height);lc.lineTo(l[b].x*w,l[b].y*height);lc.stroke()}for(let i=0;i<21;i++){lc.beginPath();lc.arc(l[i].x*w,l[i].y*height,(i===8?8:3.5)*u,0,Math.PI*2);lc.fillStyle=tentative?c:i===8?'#ffffff':c;lc.fill()}lc.strokeStyle=!tentative&&hands[id].painting&&!hands[id].pending?'#ffffff':c;lc.lineWidth=2*u;lc.beginPath();lc.arc(l[8].x*w,l[8].y*height,15*u,0,Math.PI*2);lc.stroke();lc.globalAlpha=1}
